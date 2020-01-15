@@ -87,17 +87,39 @@ public class WebController implements WebMvcConfigurer {
         return "redirect:/allContact";
     }
 
+    // Xml tous les contacts
+    @GetMapping(value = "/xml", produces = {MediaType.APPLICATION_XML_VALUE})
+    @ResponseBody
+    public Object xml(@RequestParam String action, @RequestParam(defaultValue = "-1") long id) {
+        switch (action)
+        {
+            case "listContacts":
+                return allContactXml();
+            case "getContact":
+                return getContactById(id);
+            case "delContact":
+                return delContactById(id);
+        }
+        return null;
+    }
+
+    public ListContacts allContactXml() {
+        return new ListContacts(contactRepository.findAll());
+    }
+
     // Xml par ID
-    @GetMapping(value = "/contact/{id}", produces = {MediaType.APPLICATION_XML_VALUE})
+    @GetMapping(value = "/getContact/{id}", produces = {MediaType.APPLICATION_XML_VALUE})
     @ResponseBody
     public Contact getContactById(@PathVariable long id) {
         return contactRepository.findById(id);
     }
 
-    // Xml tous les contacts
-    @GetMapping(value = "/contacts", produces = {MediaType.APPLICATION_XML_VALUE})
+    // Xml suppression par ID
+    @GetMapping(value = "/delContact/{id}", produces = {MediaType.APPLICATION_XML_VALUE})
     @ResponseBody
-    public ListContacts allContactXml(Contact contact) {
+    public ListContacts delContactById(@PathVariable long id) {
+        Contact contactToDel = contactRepository.findById(id);
+        contactRepository.delete(contactToDel);
         return new ListContacts(contactRepository.findAll());
     }
 }
