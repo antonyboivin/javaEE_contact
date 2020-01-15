@@ -7,9 +7,12 @@ import com.example.ModelApplication;
 import com.example.model.Contact;
 import com.example.model.ContactForm;
 import com.example.model.ContactRepository;
+import com.example.model.ListContacts;
+import jdk.jfr.ContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,13 +38,12 @@ public class WebController implements WebMvcConfigurer {
 
     // Affichage des contacts
     @ModelAttribute("allContact")
-    public Iterable<Contact> getContacts(){
+    public Iterable<Contact> getContacts() {
         return contactRepository.findAll();
     }
 
     @GetMapping("/allContact")
-    public String allContact(Contact contact)
-    {
+    public String allContact(Contact contact) {
         return "allContact";
     }
 
@@ -58,7 +60,7 @@ public class WebController implements WebMvcConfigurer {
             return "form";
         }
 
-        Contact c=new Contact();
+        Contact c = new Contact();
         c.setFirstName(contactForm.getFirstName());
         c.setId(contactForm.getId());
         c.setLastName(contactForm.getLastName());
@@ -84,4 +86,19 @@ public class WebController implements WebMvcConfigurer {
         contactRepository.delete(contact);
         return "redirect:/allContact";
     }
+
+    // Xml par ID
+    @GetMapping(value = "/contact/{id}", produces = {MediaType.APPLICATION_XML_VALUE})
+    @ResponseBody
+    public Contact getContactById(@PathVariable long id) {
+        return contactRepository.findById(id);
+    }
+
+    // Xml tous les contacts
+    @GetMapping(value = "/contacts", produces = {MediaType.APPLICATION_XML_VALUE})
+    @ResponseBody
+    public ListContacts allContactXml(Contact contact) {
+        return new ListContacts(contactRepository.findAll());
+    }
 }
+
