@@ -14,7 +14,7 @@ public class Contact {
     private String firstName;
     private String lastName;
 
-    protected Contact() {}
+    public Contact() {}
 
     public Contact(String firstName, String lastName) {
         this.firstName = firstName;
@@ -38,5 +38,17 @@ public class Contact {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import com.example.ModelApplication;
 import com.example.model.Contact;
@@ -12,10 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -28,6 +26,12 @@ public class WebController implements WebMvcConfigurer {
     private static final Logger log = LoggerFactory.getLogger(ModelApplication.class);
     @Autowired
     ContactRepository contactRepository;
+
+    // Page d'accueil
+    @GetMapping("/")
+    public String accueil() {
+        return "hello";
+    }
 
     // Affichage des contacts
     @ModelAttribute("allContact")
@@ -54,9 +58,30 @@ public class WebController implements WebMvcConfigurer {
             return "form";
         }
 
-        log.info("form.name="+ contactForm.getFirstName());
-        log.info("form.age="+ contactForm.getLastName());
+        Contact c=new Contact();
+        c.setFirstName(contactForm.getFirstName());
+        c.setId(contactForm.getId());
+        c.setLastName(contactForm.getLastName());
+        contactRepository.save(c);
 
-        return "redirect:/results";
+        return "redirect:/allContact";
+    }
+
+    //Editer un contact
+    @RequestMapping("/updateContact/{id}")
+    public String updateForm(ContactForm contactForm, @PathVariable long id) {
+        Contact contact = contactRepository.findById(id);
+        contactForm.setId(contact.getId());
+        contactForm.setFirstName(contact.getFirstName());
+        contactForm.setLastName(contact.getLastName());
+        return "addContact";
+    }
+
+    //Supprimer un contact
+    @RequestMapping("/delContact/{id}")
+    public String delForm(@PathVariable long id) {
+        Contact contact = contactRepository.findById(id);
+        contactRepository.delete(contact);
+        return "redirect:/allContact";
     }
 }
