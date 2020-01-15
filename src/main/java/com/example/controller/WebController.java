@@ -107,16 +107,12 @@ public class WebController implements WebMvcConfigurer {
         return new ListContacts(contactRepository.findAll());
     }
 
-    // Xml par ID
-    @GetMapping(value = "/getContact/{id}", produces = {MediaType.APPLICATION_XML_VALUE})
-    @ResponseBody
+
     public Contact getContactById(@PathVariable long id) {
         return contactRepository.findById(id);
     }
 
-    // Xml suppression par ID
-    @GetMapping(value = "/delContact/{id}", produces = {MediaType.APPLICATION_XML_VALUE})
-    @ResponseBody
+
     public ListContacts delContactById(@PathVariable long id) {
         Contact contactToDel = contactRepository.findById(id);
         contactRepository.delete(contactToDel);
