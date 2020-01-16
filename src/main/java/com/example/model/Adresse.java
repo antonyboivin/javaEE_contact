@@ -1,9 +1,7 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 
 @Entity
@@ -16,7 +14,8 @@ public class Adresse {
     private Integer codePostal;
     private String ville;
 
-    protected Adresse() {}
+
+    public Adresse() {}
 
     public Adresse(String adresse,Integer codePostal , String ville) {
         this.adresse = adresse;
@@ -45,6 +44,23 @@ public class Adresse {
 
     public String getVille() {
         return ville;
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public void setCodePostal(Integer codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 }
 

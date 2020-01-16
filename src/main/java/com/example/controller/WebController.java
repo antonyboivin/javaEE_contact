@@ -4,10 +4,7 @@ import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 
 import com.example.ModelApplication;
-import com.example.model.Contact;
-import com.example.model.ContactForm;
-import com.example.model.ContactRepository;
-import com.example.model.ListContacts;
+import com.example.model.*;
 import jdk.jfr.ContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +26,8 @@ public class WebController implements WebMvcConfigurer {
     private static final Logger log = LoggerFactory.getLogger(ModelApplication.class);
     @Autowired
     ContactRepository contactRepository;
+    @Autowired
+    AdresseRepository adresseRepository;
 
     // Page d'accueil
     @GetMapping("/")
@@ -65,6 +64,39 @@ public class WebController implements WebMvcConfigurer {
         c.setId(contactForm.getId());
         c.setLastName(contactForm.getLastName());
         contactRepository.save(c);
+
+        return "redirect:/allContact";
+    }
+
+    // Ajouter une adresse via un formulaire
+    @ModelAttribute("allAdresse")
+    public Iterable<Adresse> getAdresse() {
+        return adresseRepository.findAll();
+    }
+
+    @GetMapping("/allAdresse")
+    public String allAdresse(Adresse adresse) {
+        return "allAdresse";
+    }
+
+    @GetMapping("/addAdresse")
+    public String showFormAdresse(ContactForm contactForm) {
+        return "addAdresse";
+    }
+
+    @PostMapping("/addAdresse")
+    public String checkContactAdresseInfo(@Valid ContactForm contactForm, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return "form";
+        }
+
+        Adresse a = new Adresse();
+        a.setId(contactForm.getId());
+        a.setAdresse(contactForm.getAdresse());
+        a.setCodePostal(contactForm.getCodePostal());
+        a.setVille(contactForm.getVille());
+        adresseRepository.save(a);
 
         return "redirect:/allContact";
     }

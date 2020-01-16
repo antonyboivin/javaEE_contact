@@ -1,11 +1,9 @@
 package com.example.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Collection;
 
 @Entity
 @XmlRootElement(name = "contact")
@@ -16,6 +14,12 @@ public class Contact {
     private Long id;
     private String firstName;
     private String lastName;
+
+    @ManyToMany
+    @JoinTable(name = "CONTACT_ADDRESSE")
+    private Collection<Adresse> adresses ;
+
+
 
     public Contact() {}
 

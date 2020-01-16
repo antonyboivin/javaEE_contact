@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<script type='text/javascript'>
+        function addField(){
+            var form = document.getElementById("myTable").childNodes[1];
+            var tr=document.createElement("tr");
+            var td=document.createElement("td");
+            var input=document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("name", "addresses");
+            tr.appendChild(td);
+            td.appendChild(input);
+            form.appendChild(tr);
+        }
+    </script>
+<body>
+<form action="#" th:action="@{/addAdresse}" th:object="${contactForm}" method="post">
+    <table id="myTable">
+
+        <tr>
+            <td>Addresses:</td>
+        </tr>
+
+        <p id='addresses' th:each="e : ${allAdresse}">
+            <tr>
+                <td><input type="text" name='addresses' th:value="${e}"/></td>
+
+            </tr>
+        </p>
+
+    </table>
+    <button type="button" onclick="addField()">Ajouter une addresse</button>
+    <button type="submit">Submit</button>
+
+</form>
+
+<p><a th:href="allContact">Voir tous les contacts</a></p>
+</body>
+</html>

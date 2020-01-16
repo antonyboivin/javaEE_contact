@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2f1c431-c531-4b02-9ce0-fad194601768" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/model/AdresseRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/model/Email.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/model/EmailRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/addAdresse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/AdresseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Email.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/EmailRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addAdresse.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
@@ -12,7 +20,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/controller/WebController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/controller/WebController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/model/Adresse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/model/Adresse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/model/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/model/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/model/ContactForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/model/ContactForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/addContact.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/addContact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/allContact.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/allContact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/WebController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Adresse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Adresse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/model/ContactForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/model/ContactForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addContact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addContact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allContact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allContact.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +82,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -257,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579103234653</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix routing conflict">
+      <created>1579103766210</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579103766210</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -267,7 +292,8 @@
     <MESSAGE value="Add login proccess to project" />
     <MESSAGE value="Add xml request possibilities" />
     <MESSAGE value="Finalize xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalize xml" />
+    <MESSAGE value="Fix routing conflict" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix routing conflict" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="85" key="#Project_Structure" timestamp="1579015412179">
@@ -287,30 +313,30 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579007408450" />
-    <state x="365" y="16" key="CommitChangelistDialog2" timestamp="1579103234284">
+    <state x="365" y="16" key="CommitChangelistDialog2" timestamp="1579103765835">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="365" y="16" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579103234284" />
+    <state x="365" y="16" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579103765835" />
     <state x="365" y="38" key="CommitChangelistDialog2/0.23.1440.825@0.23.1440.825" timestamp="1578997624863" />
-    <state width="1398" height="213" key="GridCell.Tab.0.bottom" timestamp="1579103688816">
+    <state width="1398" height="213" key="GridCell.Tab.0.bottom" timestamp="1579181249253">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579103688816" />
+    <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579181249253" />
     <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.23.1440.825@0.23.1440.825" timestamp="1578997918551" />
-    <state width="1398" height="213" key="GridCell.Tab.0.center" timestamp="1579103688814">
+    <state width="1398" height="213" key="GridCell.Tab.0.center" timestamp="1579181249251">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579103688814" />
+    <state width="1398" height="213" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579181249251" />
     <state width="1398" height="213" key="GridCell.Tab.0.center/0.23.1440.825@0.23.1440.825" timestamp="1578997918550" />
-    <state width="1398" height="213" key="GridCell.Tab.0.left" timestamp="1579103688813">
+    <state width="1398" height="213" key="GridCell.Tab.0.left" timestamp="1579181249249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579103688813" />
+    <state width="1398" height="213" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579181249249" />
     <state width="1398" height="213" key="GridCell.Tab.0.left/0.23.1440.825@0.23.1440.825" timestamp="1578997918549" />
-    <state width="1398" height="213" key="GridCell.Tab.0.right" timestamp="1579103688815">
+    <state width="1398" height="213" key="GridCell.Tab.0.right" timestamp="1579181249252">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="213" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579103688815" />
+    <state width="1398" height="213" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579181249252" />
     <state width="1398" height="213" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1578997918551" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1579014797890">
       <screen x="0" y="0" width="1440" height="900" />
@@ -332,10 +358,10 @@
       <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="505" y="164" key="RollbackChangesDialog/0.23.1440.825@0.23.1440.825" timestamp="1578997498411" />
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579103245596">
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2" timestamp="1579103768801">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579103245596" />
+    <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579103768801" />
     <state x="320" y="175" key="Vcs.Push.Dialog.v2/0.23.1440.825@0.23.1440.825" timestamp="1578997628258" />
   </component>
 </project>
